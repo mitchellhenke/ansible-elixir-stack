@@ -8,6 +8,7 @@ deploy_type: "restart"
 
 mix_env: "prod"
 setup_postgres: True
+use_ecto: True
 
 build_frontend: True
 frontend_dir: ""

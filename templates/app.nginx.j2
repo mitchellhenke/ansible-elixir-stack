@@ -2,6 +2,10 @@ upstream {{app_name}} {
     server localhost:{{app_port}};
 }
 
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
 
 server {
     root {{ project_path }}/priv/static;
@@ -12,6 +16,8 @@ server {
 
 
     location / {
+	include proxy_params;
+	proxy_redirect off;
         proxy_pass http://{{ app_name }};
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

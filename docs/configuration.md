@@ -98,6 +98,13 @@ If you app doesn't require postgres, set this option to `False`.
 * Default: `True`
 * Possible values: `True`, `False`
 
+##### use_ecto
+
+If you app doesn't use Ecto, set this option to `False`.
+
+* Default: `True`
+* Possible values: `True`, `False`
+
 
 ### Frontend build configuration
 
